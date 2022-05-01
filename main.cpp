@@ -18,25 +18,24 @@ Individual* execute(Individual* indPtr, Mutator* mPtr, int k) {
 
 int main(void) {
 
-	Individual * in = new Individual("1101101111");
-
 	BitFlip * bf = new BitFlip;
-	BitFlipProb * bfProb = new BitFlipProb(0.6);
 	Rearrange * re = new Rearrange;
 
-	Individual * bfIn = execute(in, bf, 3);
+	string binarystr1;
+	int k1;
+	string binarystr2;
+	int k2;
+	
+	cin >> binarystr1 >> k1 >> binarystr2 >> k2;
 
-	cout << bfIn->getString() << endl;
+	Individual * in1 = new Individual(binarystr1);
+	Individual* in2 = new Individual(binarystr2);
 
+	Individual * bfIn1 = execute(in1, bf, k1-1);
 
-	Individual* bfProbIn = execute(in, bfProb, 3);
+	Individual * reIn2 = execute(in2, re, k2-1);
 
-	cout << bfProbIn->getString() << endl;
-
-
-	Individual* reIn = execute(in, re, 3);
-
-	cout << reIn->getString() << endl;
+	cout << bfIn1->getString() << " " << reIn2->getString() << " " << reIn2->getMaxOnes();
 
 
 }
