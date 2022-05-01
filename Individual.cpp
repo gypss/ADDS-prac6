@@ -28,7 +28,7 @@ void Individual::flipBit(int pos) {
 		binaryString[pos] = '1';
 	}
 
-	if (binaryString[pos] == '1') {
+	else if (binaryString[pos] == '1') {
 		binaryString[pos] = '0';
 	}
 }
